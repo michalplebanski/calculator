@@ -19,3 +19,17 @@ operations = {
     "*": mul,
     "/": div 
 }
+
+def validate(op, a, b):
+    try:
+        a = int(a)
+        b = int(b)
+    except ValueError:
+        print("Błąd! Argumenty powinny być liczbami!")
+        exit(1)
+
+    if op not in operations:
+        print("Błąd! Zła operacja!")
+        exit(1)
+
+    return op, a, b
