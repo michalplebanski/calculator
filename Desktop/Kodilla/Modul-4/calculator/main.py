@@ -33,3 +33,20 @@ def validate(op, a, b):
         exit(1)
 
     return op, a, b
+
+def get_data():
+    op = input("Wybierz działanie: +, -, *, /")
+    a = input("Podaj pierwszą liczbę: ")
+    b = input("Podaj drugą liczbę: ")
+
+    return op, a, b
+
+def calculator():
+    op, a, b = get_data()
+    op, a, b = validate(op, a, b)
+    operacja = operations[op]
+    result = operacja(a, b)
+    print(f"Rezultat to {result}")
+
+if __name__ == "__main__":
+    calculator()
